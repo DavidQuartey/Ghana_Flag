@@ -6,7 +6,7 @@ library(ggthemes)
 df1 <- data.frame(x1 = c(5, -.1, 5), y1 = c(37.5, 37.5, 37.7))
 
 #### Plot Ghana Flag!####
-ggplot(df1, aes(x1, y1)) + 
+g <- ggplot(df1, aes(x1, y1)) + 
 scale_color_manual(values = c("green4")) + xlim(0, 10) + ylim(0, 100) + 
 geom_hline(yintercept = seq(25, 33.3, 0.1), col = "green4") + 
 geom_hline(yintercept = seq(33.3, 41.663, 0.1), col = "yellow") + 
@@ -26,10 +26,14 @@ geom_point(data = df1, aes(x1, y1), size = 7, col = "black") +
 geom_point(data = df1, aes(x1, y1), shape = 11, size = 8.5, col = "black") +
 geom_point(data = df1, aes(x1, y1), shape = 11, size = 8.9, col = "black")
 
+print(g)
+
 #### Plot Mexico Flag!####
-ggplot(df, aes(x1, y1)) + 
+q <- ggplot(df, aes(x1, y1)) + 
   scale_color_manual(values = c("seagreen")) + xlim(0, 10) + ylim(0, 100) + 
   geom_vline(xintercept = seq(2.5/2, (2.5+5)/2, 0.0001), col = "seagreen") + 
   geom_vline(xintercept = seq((2.5+5)/2, (5+7.5)/2, 0.0001), col = "white") + 
   geom_vline(xintercept = seq((5+7.5)/2, (7.5+10)/2, 0.0001), col = "red") + 
   scale_shape_identity() + ggtitle("Mexico Flag") + xlab("x") + ylab("y")
+
+print(q)
